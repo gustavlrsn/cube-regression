@@ -1,13 +1,21 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { RegressionCube } from "../components/RegressionCube";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "3D Linear Regression Visualizer" },
+    {
+      name: "description",
+      content:
+        "Interactive 3D visualization of linear regression with two independent variables",
+    },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <div className="h-screen bg-gray-900">
+      <RegressionCube />
+    </div>
+  );
 }
